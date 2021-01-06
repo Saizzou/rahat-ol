@@ -10,10 +10,10 @@ girmeniz yeterlidir.
 Dilediginiz Grubun icerigini görmek icin sayi'yi 
 tiklamaniz yeterlidir. Grubun icerik listesi     
 acilacaktir. Sectiginiz Grubun icerisindeki      
-Uygulamalar'i sectiginiz anda 'Y' yada '1' ile   
-Yukleme islemini baslatirsiniz, 'G' yada '2' ile 
-Geriye dönebilir ve 'H'-'3' ile Bilgi Penceresini
-acabilirsiniz.                                   
+Uygulamalar'i Yukleme islemini sayiyi girerek
+baslatirsiniz, 'g' ile Geriye dönebilir ve 
+'H' yanina sayi ile Bilgi Penceresini
+acabilirsiniz.  (SUAN AKTIF DEGIL)                                 
 
 Uygulamalar'in yaninda bulun '*S' Simgesi paketin
 SnapCraft ile kullanildigini gösterir. Snap      
