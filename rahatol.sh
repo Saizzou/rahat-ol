@@ -572,25 +572,25 @@ flibreoffice (){
 # ::: xournall ::: #
 fxournall (){
 	fbildiri
-	apt install xournal
+	apt install -y xournal
 	fyuklendi
 }
 # ::: texstudio ::: #
 ftexstudio (){
 	fbildiri
-	apt install texstudio
+	apt install -y texstudio
 	fyuklendi
 }
 # ::: zim ::: #
 fzim (){
 	fbildiri
-	apt install zim
+	apt install -y zim
 	fyuklendi
 }
 # ::: notepadqq ::: #
 fnotepadqq (){
 	fbildiri
-	apt install notepadqq
+	apt install -y notepadqq
 	fyuklendi
 }
 # ::: cherrytree ::: #
