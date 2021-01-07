@@ -1,7 +1,12 @@
 # rahat-ol
 Otomatik Linux Paket Yükleme Araci
 
-OTOMATIK UYGULAMA YUKLEYICI KULLANIM KILAVUZU:   
+#YUKLEME
+1- rahat-ol dosyasini indirin
+2- terminalden indirdiginiz dosya icine gecin ($ cd ~/Downloads/ )
+3- sudo ile calistirin ( $ sudo ./rahat-ol )
+
+#OTOMATIK UYGULAMA YUKLEYICI KULLANIM KILAVUZU:   
 
 Karsiniza cikan menü'den ulasmak istediginiz     
 Uygulama Grubu'nu seciniz. Bunun icin sayi'yi    
