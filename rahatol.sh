@@ -843,6 +843,8 @@ fonksiyon2 (){
 	  echo
 	elif [ $secim = 'h5' ]; then
 	  echo
+	elif [ $secim = 'g' ]; then
+	  echo
 	else
 	  clear
 	  echo ' *************************** '
@@ -971,7 +973,7 @@ fonksiyon4 (){
 	elif [ $secim = 'h10' ]; then
 	  echo H10
 	elif [ $secim = 'g' ]; then
-	  break
+	  echo
 	else
 	  clear
 	  echo ' *************************** '
@@ -1033,7 +1035,7 @@ fonksiyon5 (){
 	elif [ $secim = 'h8' ]; then
 	  echo H8
 	elif [ $secim = 'g' ]; then
-	  break
+	  echo
 	else
 	  clear
 	  echo ' *************************** '
