@@ -117,7 +117,7 @@ paket103='Lutris'
 
 fbildiri (){
 	clear
-	paket=$('paket'+$grup+$secim)
+	paket='paket'$grup$secim
 	echo $paket yuklenmeye baslayacaktir..
 	sleep 2
 }
