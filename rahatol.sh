@@ -17,6 +17,16 @@
 # ::: DEGISKEN TANIMI :::
 #
 
+#Renkler
+siyah='\033[0;30m'
+kirmizi='\033[0;31m'
+yesil='\033[0;32m'
+mavi='\033[0;34m'
+cyan='\033[0;36m'
+sari='\033[0;33m'
+normal='\033[0m'
+
+
 grup1='terminal'
 paket11='Terminator'
 paket12='Zsh Terminali'
@@ -134,6 +144,34 @@ fyuklendi (){
 #    ::: DEGISKEN TANIMLARI BITTI :::
 ###########################################
 #
+
+#
+# :::  FONKSIYON-GRUPLARI KONTROLU SONU      :::
+# :::            PROGRAM KAPANIS             :::
+#
+fcikis (){
+i=5
+while [ $i -gt 0 ];
+ do
+ clear
+ echo 
+ echo " -----------------------------------------------"
+ echo
+ echo
+ echo " +++++++++>   Cikis yapiliyor...   <++++++++++++"
+ echo
+ echo
+ echo -e " #####> ${sari} Koddunyam.net Sitesine Bekleriz ${normal} <#####"
+ echo
+ echo
+ echo " -----------------------------------------------"
+ echo -e ${kirmizi}
+ ((i--))
+ echo -e " Program $i saniye icinde kapanacaktir..${normal} "
+ sleep 1
+done
+exit
+}
 
 #
 ##########################################
@@ -1201,7 +1239,7 @@ fonksiyon9 (){
  		sleep 3;;
  	'g'|'G') echo ;;
  	*) echo ' *************************** '
- 	  echo '     >>> HATALI GIRIS <<<    '
+ 	  echo -e "{kirmizi}     >>> HATALI GIRIS <<<    "
  	  echo ' --------------------------- '
  	  sleep 2
  	  fonksiyon9;;
@@ -1225,18 +1263,18 @@ fonksiyon10 (){
 	'1') fsteam;;
 	'2') fplayonlinux;;
 	'3') flutris;;
-	'h1')echo "Bu fonksiyon yakinda gelecek"
+	'h1')echo -e "{yesil}Bu fonksiyon yakinda gelecek"
 		sleep 3;;
-	'h2') echo "Bu fonksiyon yakinda gelecek"
+	'h2') echo -e "{yesil}Bu fonksiyon yakinda gelecek"
 		sleep 3;;
-	'h3') echo "Bu fonksiyon yakinda gelecek"
+	'h3') echo -e "{yesil}Bu fonksiyon yakinda gelecek"
 		sleep 3;;
 	'g'|'G') echo ;;
 	*) echo ' *************************** '
-	  echo '     >>> HATALI GIRIS <<<    '
+	  echo -e " ${yesil}     >>> HATALI GIRIS <<<    "
 	  echo ' --------------------------- '
 	  sleep 2
-	  fonksiyon1;;
+	  fonksiyon10;;
 	esac
 main
 }
@@ -1488,29 +1526,30 @@ fonksiyonK9 () {
 menu (){
 	clear
 	echo
-	echo " Grup 1: Terminal Uygulamalari              "
-	echo " Grup 2: Komunikasyon-Iletisim Uygulamalari "
-	echo " Grup 3: Programlama Uygulamalari           "
-	echo " Grup 4: Remote Islem Uygulamalari          "
-	echo " Grup 5: Görsel & Arayüz Uygulamalari       "
-	echo " Grup 6: Güvenlik Uygulamalari              "
-	echo " Grup 7: Office & Not Alim Uygulamalari     "
-	echo " Grup 8: V.Server, Emulator & Database      "
-	echo " Grup 9: Müzik & Video Uygulamalari         "
-	echo " Grup10: Oyunlar icin gerekli Uygulamalar   "
-	echo " Bilgi : Kullanim kilavuzu icin ->'K'       "
-	echo " Cikis : Cikmak icin -> 'Q' veya 'C'        "
-	echo
+echo -e "${cyan} Grup 1: Terminal Uygulamalari              "
+echo -e "${mavi} Grup 2: Komunikasyon-Iletisim Uygulamalari "
+echo -e "${cyan} Grup 3: Programlama Uygulamalari           "
+echo -e "${mavi} Grup 4: Remote Islem Uygulamalari          "
+echo -e "${cyan} Grup 5: Görsel & Arayüz Uygulamalari       "
+echo -e "${mavi} Grup 6: Güvenlik Uygulamalari              "
+echo -e "${cyan} Grup 7: Office & Not Alim Uygulamalari     "
+echo -e "${mavi} Grup 8: V.Server, Emulator & Database      "
+echo -e "${cyan} Grup 9: Müzik & Video Uygulamalari         "
+echo -e "${mavi} Grup10: Oyunlar icin gerekli Uygulamalar   "
+echo -e "${siyah} ------------------------------------------ "
+echo -e " ${sari} Bilgi : Kullanim kilavuzu icin ->'K'       "
+echo -e " ${sari} Cikis : Cikmak icin -> 'Q' veya 'C'        "
+echo -e " ${normal}"
 }
 
 main (){
 	echo
-	echo " ########################################## "
-	echo " ------------------------------------------ "
-	echo " **********                     *********** "
-	echo " #####>>>   KODDUNYAM.NET SUNAR   <<<###### "
-	echo " ..........                     ........... "
-	echo " ****************************************** "
+	echo -e "${sari} ########################################## "
+	echo -e "${sari} ------------------------------------------ "
+	echo -e "${sari} **********                     *********** "
+	echo -e "${sari} #####>>> ${kirmizi}  KODDUNYAM.NET SUNAR ${sari}  <<<###### "
+	echo -e "${sari} ..........                     ........... "
+	echo -e "${sari} ****************************************** "
 	echo
 	menu
 
@@ -1528,12 +1567,13 @@ main (){
 		'9') fonksiyon9;;
 		'10') fonksiyon10;;
 		'K'|'k')fonksiyonK1;;
-		'c'|'C'|'Q'|'q')
-		echo;;
+		'c')
+		fcikis;;
 		*)
-		echo " Hatali Giris Yaptiniz! Lutfen tekrar deneyin"
+		echo -e "${yesil} Hatali Giris Yaptiniz! Lutfen tekrar deneyin ${normal}"
 		sleep 2
-		menu;;
+		menu
+		main;;
 	esac
 }
 
@@ -1595,13 +1635,13 @@ i=5
 	clear
 	echo
 	echo
-	echo ' ################   SUDO HATASI   #################'
+	echo -e " ${kirmizi}################   SUDO HATASI   #################"
 	echo
-	echo "  O_  Bu Skripti 'sudo' ile calistirmaniz gerekiyor"
-	echo "  |   Skript kapanacak lütfen tekrar 'sudo' ile    "
-	echo " /\   calistiriniz.                                "
+	echo -e " ${kirmizi} O_  Bu Skripti "sudo" ile calistirmaniz gerekiyor"
+	echo -e " ${kirmizi} |   Skript kapanacak lütfen tekrar "sudo" ile    "
+	echo -e " ${kirmizi}/\   calistiriniz.                                "
 	echo
-	echo " ##############>>>  KAPATILIYOR  <<<###############"
+	echo -e " ${kirmizi} ##############>>>  KAPATILIYOR  <<<###############"
 	((i--))
 	echo
 	echo " Program $i saniye icinde kapanacaktir..           "
@@ -1623,27 +1663,3 @@ fi
 
 main
 
-#
-# :::  FONKSIYON-GRUPLARI KONTROLU SONA ERDI  :::
-# :::            PROGRAM KAPANIS             :::
-#
-
-i=5
-while [ $i -gt 0 ]
- do
- clear
- echo " -----------------------------------------------"
- echo
- echo
- echo " +++++++++>   Cikis yapiliyor...   <++++++++++++"
- echo
- echo
- echo " #####>  Koddunyam.net Sitesine Bekleriz  <#####"
- echo
- echo
- echo " -----------------------------------------------"
- echo
- ((i--))
- echo " Program $i saniye icinde kapanacaktir.."
- sleep 1
-done
