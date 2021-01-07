@@ -2,8 +2,11 @@
 Otomatik Linux Paket Yükleme Araci
 
 #YUKLEME
-1- rahat-ol dosyasini indirin \\
+
+1- rahat-ol dosyasini indirin 
+
 2- terminalden indirdiginiz dosya icine gecin ($ cd ~/Downloads/ )
+
 3- sudo ile calistirin ( $ sudo ./rahat-ol )
 
 #OTOMATIK UYGULAMA YUKLEYICI KULLANIM KILAVUZU:   
