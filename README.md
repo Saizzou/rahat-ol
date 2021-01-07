@@ -7,7 +7,7 @@ Otomatik Linux Paket Yükleme Araci
 
 2- terminalden indirdiginiz dosya icine gecin ($ cd ~/Downloads/ )
 
-3- sudo ile calistirin ( $ sudo ./rahat-ol )
+3- sudo ile calistirin ( $ sudo ./rahatol-v.0.0.2 )
 
 #OTOMATIK UYGULAMA YUKLEYICI KULLANIM KILAVUZU:   
 
