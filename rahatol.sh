@@ -151,7 +151,7 @@ fterminator (){
 # ::: zsh Terminali ::: #
 fterminator (){
 	fbildiri
-	apt install terminator
+	apt install zsh
 	fyuklendi
 }
 # ::: git Komutu ::: #
@@ -213,7 +213,7 @@ fohmyzsh (){
 fpowerlevel (){
 	fbildiri
 	apt install git
-	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \ 
+	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
 ~/powerlevel10k
 	echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 	fyuklendi
@@ -316,7 +316,7 @@ fqtcreator (){
 	fbildiri
 	mkdir ~/qt
 	wget \
-https://d13lb3tujbc8s0.cloudfront.net/onlineinstallers/qt-unified-linux-x64-4.0.1-online.run 
+https://d13lb3tujbc8s0.cloudfront.net/onlineinstallers/qt-unified-linux-x64-4.0.1-online.run
 \ > ~/qt/q
 	~/qt/qt-unified-linux-x64-4.0.1-online.run
 	fyuklendi
@@ -363,7 +363,7 @@ fopenvpn (){
 # ::: wireguard ::: #
 fwireguard (){
 	fbildiri
-	sh -c "echo 'deb http://deb.debian.org/debian/ unstable main' >> 
+	sh -c "echo 'deb http://deb.debian.org/debian/ unstable main' >>
 /etc/apt/sources.list.d/unstable.list"
 	apt update
 	apt install wireguard
@@ -549,7 +549,7 @@ fmetasploit (){
 	clear
 	cd /tmp
 	curl \
-https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb 
+https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb
 \ > msfinstall
 	chmod +x msfinstall
 	./msfinstall
@@ -617,27 +617,27 @@ fvirtualbox (){
 	wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
 	add-apt-repository "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib"
 	apt update
-	apt install virtualbox-6.0
+	apt install -y virtualbox-6.0
 	fyuklendi
 }
 
 # ::: sql-lite ::: #
 fsqllite (){
 	fbildiri
-	apt install sqlite
+	apt install -y sqlite
 	fyuklendi
 }
 # ::: mysql ::: #
 fmysql (){
 	fbildiri
-	apt install mysql-common
+	apt install -y mysql-common
 	fyuklendi
 }
 # ::: apache2 ::: #
 fapachee (){
 	fbildiri
-	apt install apache2
-	apt install apache2-utils
+	apt install -y apache2
+	apt install -y apache2-utils
 	fyuklendi
 }
 
@@ -645,25 +645,25 @@ fapachee (){
 # ::: vlc ::: #
 fvlc (){
 	fbildiri
-	apt install vlc
+	apt install -y vlc
 	fyuklendi
 }
 # ::: obs-studio ::: #
 fobs (){
 	fbildiri
-	apt install obs-studio
+	apt install -y obs-studio
 	fyuklendi
 }
 # ::: openshot ::: #
 fopenshot (){
 	fbildiri
-	apt install openshot
+	apt install -y openshot
 	fyuklendi
 }
 # ::: kdenlive ::: #
 fkdenlive (){
 	fbildiri
-	apt install kdenlive
+	apt install -y kdenlive
 	fyuklendi
 }
 # ::: kodi ::: #
@@ -708,7 +708,7 @@ fsteam (){
 # ::: PlayOnlinux ::: #
 fplayonlinux (){
 	fbildiri
-	apt install playonlinux
+	apt install -y playonlinux
 	fyuklendi
 }
 # ::: lutris ::: #
@@ -716,7 +716,7 @@ flutris (){
 	fbildiri
 	add-apt-repository ppa:lutris-team/lutris
 	apt update
-	apt install lutris
+	apt install -y lutris
 	fyuklendi
 }
 
@@ -747,65 +747,51 @@ fonksiyon1 (){
 	echo
 	grup=1
 	read -p ' Seciminizi girin: ' secim
-	if [ $secim = '1' ]; then
-	  fterminator
-	elif [ $secim = '2' ]; then
-	  fzsh
-	elif [ $secim = '3' ]; then
-	  fohmyzsh
-	elif [ $secim = '4' ]; then
-	  fpowerlevel
-	elif [ $secim = '5' ]; then
-	  fvim
-	elif [ $secim = '6' ]; then
-	  femacs
-	elif [ $secim = '7' ]; then
-	  fhtop
-	elif [ $secim = '8' ]; then
-	  flocate
-	elif [ $secim = '9' ]; then
-	  fgit
-	elif [ $secim = '10' ]; then
-	  fneofetch
-	elif [ $secim = '11' ]; then
-	  fscreenfetch
-	elif [ $secim = '12' ]; then
-	  flinuxlogo
-	elif [ $secim = 'h1' ]; then
-	  echo H1
-	elif [ $secim = 'h2' ]; then
-	  echo H2
-	elif [ $secim = 'h3' ]; then
-	  echo H3
-	elif [ $secim = 'h4' ]; then
-	  echo H4
-	elif [ $secim = 'h5' ]; then
-	  echo H5
-	elif [ $secim = 'h6' ]; then
-	  echo H6
-	elif [ $secim = 'h7' ]; then
-	  echo H7
-	elif [ $secim = 'h8' ]; then
-	  echo H8
-	elif [ $secim = 'h9' ]; then
-	  echo H9
-	elif [ $secim = 'h10' ]; then
-	  echo H10
-	elif [ $secim = 'h11' ]; then
-	  echo H11
-	elif [ $secim = 'h12' ]; then
-	  echo H12
-	elif [ $secim = 'g' ]; then
-	  echo
-	else
-	  clear
-	  echo ' *************************** '
+	case $secim in
+	'1') fterminator;;
+	'2') fzsh;;
+	'3') fohmyzsh;;
+	'4') fpowerlevel;;
+	'5') fvim;;
+	'6') femacs;;
+	'7') fhtop;;
+	'8') flocate;;
+	'9') fgit;;
+	'10') fneofetch;;
+	'11') fscreenfetch;;
+	'12') flinuxlogo;;
+	'h1')echo "Bu fonksiyon yakinda gelecek"
+		sleep 3;;
+	'h2') echo "Bu fonksiyon yakinda gelecek"
+		sleep 3;;
+	'h3') echo "Bu fonksiyon yakinda gelecek"
+		sleep 3;;
+	'h4') echo "Bu fonksiyon yakinda gelecek"
+		sleep 3;;
+	'h5') echo "Bu fonksiyon yakinda gelecek"
+		sleep 3;;
+	'h6') echo "Bu fonksiyon yakinda gelecek"
+		sleep 3;;
+	'h7') echo "Bu fonksiyon yakinda gelecek"
+		sleep 3;;
+	'h8') echo "Bu fonksiyon yakinda gelecek"
+		sleep 3;;
+	'h9') echo "Bu fonksiyon yakinda gelecek"
+		sleep 3;;
+	'h10') echo "Bu fonksiyon yakinda gelecek"
+		sleep 3;;
+	'h11') echo "Bu fonksiyon yakinda gelecek"
+		sleep 3;;
+	'h12') echo "Bu fonksiyon yakinda gelecek"
+		sleep 3;;
+	'g'|'G') echo ;;
+	*) echo ' *************************** '
 	  echo '     >>> HATALI GIRIS <<<    '
 	  echo ' --------------------------- '
 	  sleep 2
-	  fonksiyon1
-	fi
-menu
+	  fonksiyon1;;
+	esac
+main
 }
 
 fonksiyon2 (){
@@ -823,37 +809,31 @@ fonksiyon2 (){
 	echo
 	grup=2
 	read -p ' Seciminizi girin: ' secim
-	if [ $secim = '1' ]; then
-	  fdiscord
-	elif [ $secim = '2' ]; then
-	  frambox
-	elif [ $secim = '3' ]; then
-	  ffirefox
-	elif [ $secim = '4' ]; then
-	  fchromium
-	elif [ $secim = '5' ]; then
-	  fvivaldi
-	elif [ $secim = 'h1' ]; then
-	  echo H2
-	elif [ $secim = 'h2' ]; then
-	  echo H3
-	elif [ $secim = 'h3' ]; then
-	  echo H4
-	elif [ $secim = 'h4' ]; then
-	  echo
-	elif [ $secim = 'h5' ]; then
-	  echo
-	elif [ $secim = 'g' ]; then
-	  echo
-	else
-	  clear
+	case $secim in
+	'1') fdiscord;;
+	'2') frambox;;
+	'3') ffirefox;;
+	'4') fchromium;;
+	'5') fvivaldi;;
+	'h1') echo "Bu fonksiyon yakinda gelecek"
+		sleep 3;;
+	'h2') echo "Bu fonksiyon yakinda gelecek"
+		sleep 3;;
+	'h3') echo "Bu fonksiyon yakinda gelecek"
+		sleep 3;;
+	'h4') echo "Bu fonksiyon yakinda gelecek"
+		sleep 3;;
+	'h5') echo "Bu fonksiyon yakinda gelecek"
+		sleep 3;;
+	'g'|'G') echo;;
+	*) clear
 	  echo ' *************************** '
 	  echo '     >>> HATALI GIRIS <<<    '
 	  echo ' --------------------------- '
 	  sleep 2
-	  fonksiyon2
-	fi
-menu
+	  fonksiyon2;;
+	esac
+main
 }
 
 fonksiyon3 (){
@@ -872,45 +852,37 @@ fonksiyon3 (){
 	echo
 	grup=3
 	read -p ' Seciminizi girin: ' secim
-	if [ $secim = '1' ]; then
-	  fvscode
-	elif [ $secim = '2' ]; then
-	  fatom
-	elif [ $secim = '3' ]; then
-	  fpycharm
-	elif [ $secim = '4' ]; then
-	  feclipse
-	elif [ $secim = '5' ]; then
-	  fkomodo
-	elif [ $secim = '6' ]; then
-	  fqtcreator
-	elif [ $secim = '7' ]; then
-	  fjava
-	elif [ $secim = 'h1' ]; then
-	  echo H1
-	elif [ $secim = 'h2' ]; then
-	  echo H2
-	elif [ $secim = 'h3' ]; then
-	  echo H3
-	elif [ $secim = 'h4' ]; then
-	  echo H4
-	elif [ $secim = 'h5' ]; then
-	  echo H5
-	elif [ $secim = 'h6' ]; then
-	  echo H6
-	elif [ $secim = 'h7' ]; then
-	  echo h7
-	elif [ $secim = 'g' ]; then
-	  echo
-	else
-	  clear
-	  echo ' *************************** '
-	  echo '     >>> HATALI GIRIS <<<    '
-	  echo ' --------------------------- '
-	  sleep 2
-	  fonksiyon3
-	fi
-menu
+	case $secim in
+	'1') fvscode;;
+	'2') fatom;;
+	'3') fpycharm;;
+	'4') feclipse;;
+	'5') fkomodo;;
+	'6') fqtcreator;;
+	'7') fjava;;
+	'h1')echo "Bu fonksiyon yakinda gelecek"
+			sleep 3;;
+	'h2') echo "Bu fonksiyon yakinda gelecek"
+			sleep 3;;
+	'h3') echo "Bu fonksiyon yakinda gelecek"
+			sleep 3;;
+	'h4') echo "Bu fonksiyon yakinda gelecek"
+			sleep 3;;
+	'h5') echo "Bu fonksiyon yakinda gelecek"
+			sleep 3;;
+	'h6') echo "Bu fonksiyon yakinda gelecek"
+			sleep 3;;
+	'h7') echo "Bu fonksiyon yakinda gelecek"
+			sleep 3;;
+	'g'|'G') echo;;
+	*) clear
+				echo ' *************************** '
+				echo '     >>> HATALI GIRIS <<<    '
+				echo ' --------------------------- '
+				sleep 2
+				fonksiyon3;;
+	esac
+main
 }
 
 fonksiyon4 (){
@@ -932,57 +904,45 @@ fonksiyon4 (){
 	echo
 	grup=4
 	read -p ' Seciminizi girin: ' secim
-	if [ $secim = '1' ]; then
-	  fteamviewer32
-	elif [ $secim = '2' ]; then
-	  fteamviewer64
-	elif [ $secim = '3' ]; then
-	  fopenvpn
-	elif [ $secim = '4' ]; then
-	  fwireguard
-	elif [ $secim = '5' ]; then
-	  fssh
-	elif [ $secim = '6' ]; then
-	  ftightvpn
-	elif [ $secim = '7' ]; then
-	  fremmina
-	elif [ $secim = '8' ]; then
-	  ffilezilla
-	elif [ $secim  '9' ]; then
-	  fdropbox
-	elif [ $secim = '10' ]; then
-	  fadb
-	elif [ $secim = 'h1' ]; then
-	  echo H1
-	elif [ $secim = 'h2' ]; then
-	  echo H2
-	elif [ $secim = 'h3' ]; then
-	  echo H3
-	elif [ $secim = 'h4' ]; then
-	  echo H4
-	elif [ $secim = 'h5' ]; then
-	  echo H5
-	elif [ $secim = 'h6' ]; then
-	  echo H6
-	elif [ $secim = 'h7' ]; then
-	  echo H7
-	elif [ $secim = 'h8' ]; then
-	  echo H8
-	elif [ $secim = 'h9' ]; then
-	  echo H9
-	elif [ $secim = 'h10' ]; then
-	  echo H10
-	elif [ $secim = 'g' ]; then
-	  echo
-	else
-	  clear
-	  echo ' *************************** '
-	  echo '     >>> HATALI GIRIS <<<    '
-	  echo ' --------------------------- '
-	  sleep 2
-	  fonksiyon4
-	fi
-menu
+	case $secim in
+	 '1') fteamviewer32;;
+	 '2') fteamviewer64;;
+	 '3') fopenvpn;;
+	 '4') fwireguard;;
+	 '5') fssh;;
+	 '6') ftightvpn;;
+	 '7') fremmina;;
+	 '8') ffilezilla;;
+	 '9') fdropbox;;
+	 '10') fadb;;
+	 'h1')echo "Bu fonksiyon yakinda gelecek"
+		 sleep 3;;
+	 'h2') echo "Bu fonksiyon yakinda gelecek"
+		 sleep 3;;
+	 'h3') echo "Bu fonksiyon yakinda gelecek"
+		 sleep 3;;
+	 'h4') echo "Bu fonksiyon yakinda gelecek"
+		 sleep 3;;
+	 'h5') echo "Bu fonksiyon yakinda gelecek"
+		 sleep 3;;
+	 'h6') echo "Bu fonksiyon yakinda gelecek"
+		 sleep 3;;
+	 'h7') echo "Bu fonksiyon yakinda gelecek"
+		 sleep 3;;
+	 'h8') echo "Bu fonksiyon yakinda gelecek"
+		 sleep 3;;
+	 'h9') echo "Bu fonksiyon yakinda gelecek"
+		 sleep 3;;
+	 'h10') echo "Bu fonksiyon yakinda gelecek"
+		 sleep 3;;
+	 'g'|'G') echo ;;
+	 *) echo ' *************************** '
+		 echo '     >>> HATALI GIRIS <<<    '
+		 echo ' --------------------------- '
+		 sleep 2
+		 fonksiyon4;;
+	 esac
+main
 }
 
 fonksiyon5 (){
@@ -1002,49 +962,39 @@ fonksiyon5 (){
 	echo
 	grup=5
 	read -p ' Seciminizi girin: ' secim
-	if [ $secim = '1' ]; then
-	  ftweaks
-	elif [ $secim = '2' ]; then
-	  fgimp
-	elif [ $secim = '3' ]; then
-	  fblender
-	elif [ $secim = '4' ]; then
-	  finkscape
-	elif [ $secim = '5' ]; then
-	  fpinta
-	elif [ $secim = '6' ]; then
-	  fphotopea
-	elif [ $secim = '7' ]; then
-	  ffreemind
-	elif [ $secim = '8' ]; then
-	  fdrawio
-	elif [ $secim = 'h1' ]; then
-	  echo H1
-	elif [ $secim = 'h2' ]; then
-	  echo H2
-	elif [ $secim = 'h3' ]; then
-	  echo H3
-	elif [ $secim = 'h4' ]; then
-	  echo H4
-	elif [ $secim = 'h5' ]; then
-	  echo H5
-	elif [ $secim = 'h6' ]; then
-	  echo H6
-	elif [ $secim = 'h7' ]; then
-	  echo H7
-	elif [ $secim = 'h8' ]; then
-	  echo H8
-	elif [ $secim = 'g' ]; then
-	  echo
-	else
-	  clear
-	  echo ' *************************** '
-	  echo '     >>> HATALI GIRIS <<<    '
-	  echo ' --------------------------- '
-	  sleep 2
-	  fonksiyon1
-	fi
-menu
+	case $secim in
+	 '1') ftweaks;;
+	 '2') fgimp;;
+	 '3') fblender;;
+	 '4') finkscape;;
+	 '5') fpinta;;
+	 '6') fphotopea;;
+	 '7') ffreemind;;
+	 '8') fdrawio;;
+	 'h1')echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h2') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h3') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h4') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h5') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h6') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h7') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h8') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'g'|'G') echo ;;
+ 	*) echo ' *************************** '
+ 	  echo '     >>> HATALI GIRIS <<<    '
+ 	  echo ' --------------------------- '
+ 	  sleep 2
+ 	  fonksiyon5;;
+ 	esac
+main
 }
 
 fonksiyon6 () {
@@ -1068,65 +1018,51 @@ fonksiyon6 () {
 	echo
 	grup=6
 	read -p ' Seciminizi girin: ' secim
-	if [ $secim = '1' ]; then
-	  ftimeshift
-	elif [ $secim = '2' ]; then
-	  fkeepassxc
-	elif [ $secim = '3' ]; then
-	  fufw
-	elif [ $secim = '4' ]; then
-	  fnmap
-	elif [ $secim = '5' ]; then
-	  fwireshark
-	elif [ $secim = '6' ]; then
-	  fmacchanger
-	elif [ $secim = '7' ]; then
-	  fproxychains
-	elif [ $secim = '8' ]; then
-	  faircrack
-	elif [ $secim = '9' ]; then
-	  fnetcat
-	elif [ $secim = '10' ]; then
-	  fetherape
-	elif [ $secim = '11' ]; then
-	  fkismet
-	elif [ $secim = '12' ]; then
-	  fmetasploit
-	elif [ $secim = 'h1' ]; then
-	  echo H1
-	elif [ $secim = 'h2' ]; then
-	  echo H2
-	elif [ $secim = 'h3' ]; then
-	  echo H3
-	elif [ $secim = 'h4' ]; then
-	  echo H4
-	elif [ $secim = 'h5' ]; then
-	  echo H5
-	elif [ $secim = 'h6' ]; then
-	  echo H6
-	elif [ $secim = 'h7' ]; then
-	  echo H7
-	elif [ $secim = 'h8' ]; then
-	  echo H8
-	elif [ $secim = 'h9' ]; then
-	  echo H9
-	elif [ $secim = 'h10' ]; then
-	  echo H10
-	elif [ $secim = 'h11' ]; then
-	  echo H11
-	elif [ $secim = 'h12' ]; then
-	  echo H12
-	elif [ $secim = 'g' ]; then
-	  echo
-	else
-	  clear
-	  echo ' *************************** '
-	  echo '     >>> HATALI GIRIS <<<    '
-	  echo ' --------------------------- '
-	  sleep 2
-	  fonksiyon1
-	fi
-menu
+	case $secim in
+	'1') ftimeshift;;
+	'2') fkeepassxc;;
+	'3') fufw;;
+	'4') fnmap;;
+	'5') fwireshark;;
+	'6') fmacchanger;;
+	'7') fproxychains;;
+	'8') faircrack;;
+	'9') fnetcat;;
+	'10') fetherape;;
+	'11') fkismet;;
+	'12') fmetasploit;;
+	'h1')echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h2') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h3') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h4') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h5') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h6') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h7') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h8') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h9') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h10') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h11') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h12') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'g'|'G') echo ;;
+ 	*) echo ' *************************** '
+ 	  echo '     >>> HATALI GIRIS <<<    '
+ 	  echo ' --------------------------- '
+ 	  sleep 2
+ 	  fonksiyon6;;
+ 	esac
+main
 }
 
 fonksiyon7 (){
@@ -1145,45 +1081,36 @@ fonksiyon7 (){
 	echo
 	grup=7
 	read -p ' Seciminizi girin: ' secim
-	if [ $secim = '1' ]; then
-	  flibreoffice
-	elif [ $secim = '2' ]; then
-	  fxournall
-	elif [ $secim = '3' ]; then
-	  fcherrytree
-	elif [ $secim = '4' ]; then
-	  fzim
-	elif [ $secim = '5' ]; then
-	  fnotepadqq
-	elif [ $secim = '6' ]; then
-	  ftexstudio
-	elif [ $secim = '7' ]; then
-	  fwps
-	elif [ $secim = 'h1' ]; then
-	  echo H1
-	elif [ $secim = 'h2' ]; then
-	  echo H2
-	elif [ $secim = 'h3' ]; then
-	  echo H3
-	elif [ $secim = 'h4' ]; then
-	  echo H4
-	elif [ $secim = 'h5' ]; then
-	  echo H5
-	elif [ $secim = 'h6' ]; then
-	  echo H6
-	elif [ $secim = 'h7' ]; then
-	  echo H7
-	elif [ $secim = 'g' ]; then
-	  echo
-	else
-	  clear
-	  echo ' *************************** '
+	case $secim in
+	'1') flibreoffice;;
+	'2') fxournall;;
+	'3') fcherrytree;;
+	'4') fzim;;
+	'5') fnotepadqq;;
+	'6') ftexstudio;;
+	'7') fwps;;
+	'h1') echo "Bu fonksiyon yakinda gelecek"
+			sleep 3;;
+	'h2') echo "Bu fonksiyon yakinda gelecek"
+			sleep 3;;
+	'h3') echo "Bu fonksiyon yakinda gelecek"
+			sleep 3;;
+	'h4') echo "Bu fonksiyon yakinda gelecek"
+			sleep 3;;
+	'h5') echo "Bu fonksiyon yakinda gelecek"
+			sleep 3;;
+	'h6') echo "Bu fonksiyon yakinda gelecek"
+			sleep 3;;
+	'h7') echo "Bu fonksiyon yakinda gelecek"
+			sleep 3;;
+	'g'|'G') echo ;;
+	*) echo ' *************************** '
 	  echo '     >>> HATALI GIRIS <<<    '
 	  echo ' --------------------------- '
 	  sleep 2
-	  fonksiyon1
-	fi
-menu
+	  fonksiyon7;;
+	esac
+main
 }
 
 fonksiyon8 (){
@@ -1199,33 +1126,27 @@ fonksiyon8 (){
 	echo " 'g': Geri 'h': Yardim        "
 	echo
 	read -p ' Seciminizi girin: ' secim
-	if [ $secim = '1' ]; then
-	  fvirtualbox
-	elif [ $secim = '2' ]; then
-	  fapachee
-	elif [ $secim = '3' ]; then
-	  fsqllite
-	elif [ $secim = '4' ]; then
-	  fmysql
-	elif [ $secim = 'h1' ]; then
-	  echo H1
-	elif [ $secim = 'h2' ]; then
-	  echo H2
-	elif [ $secim = 'h3' ]; then
-	  echo H3
-	elif [ $secim = 'h4' ]; then
-	  echo H4
-	elif [ $secim = 'g' ]; then
-	  echo
-	else
-	  clear
-	  echo ' *************************** '
-	  echo '     >>> HATALI GIRIS <<<    '
-	  echo ' --------------------------- '
-	  sleep 2
-	  fonksiyon1
-	fi
-menu
+	case $secim in
+	'1') fvirtualbox;;
+	'2') fapachee;;
+	'3') fsqllite;;
+	'4') fmysql;;
+	'h1')echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h2') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h3') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h4') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'g'|'G') echo ;;
+	*) echo ' *************************** '
+ 	  echo '     >>> HATALI GIRIS <<<    '
+ 	  echo ' --------------------------- '
+ 	  sleep 2
+ 	  fonksiyon8;;
+ 	esac
+main
 }
 
 fonksiyon9 (){
@@ -1245,49 +1166,47 @@ fonksiyon9 (){
 	echo " 'g': Geri 'h': Yardim        "
 	echo
 	read -p ' Seciminizi girin: ' secim
-	if [ $secim = '1' ]; then
-	  fvlc
-	elif [ $secim = '2' ]; then
-	  faudacity
-	elif [ $secim = '3' ]; then
-	  fspotify
-	elif [ $secim = '4' ]; then
-	  fobs
-	elif [ $secim = '5' ]; then
-	  fkdenlive
-	elif [ $secim = '6' ]; then
-	  fkazam
-	elif [ $secim = '7' ]; then
-	  fopenshot
-	elif [ $secim = '8' ]; then
-	  fkodi
-	elif [ $secim = 'h1' ]; then
-	  echo H1
-	elif [ $secim = 'h2' ]; then
-	  echo H2
-	elif [ $secim = 'h3' ]; then
-	  echo H3
-	elif [ $secim = 'h4' ]; then
-	  echo H4
-	elif [ $secim = 'h5' ]; then
-	  echo H5
-	elif [ $secim = 'h6' ]; then
-	  echo H6
-	elif [ $secim = 'h7' ]; then
-	  echo H7
-	elif [ $secim = 'h8' ]; then
-	  echo H8
-	elif [ $secim = 'g' ]; then
-	 echo
-	else
-	  clear
-	  echo ' *************************** '
-	  echo '     >>> HATALI GIRIS <<<    '
-	  echo ' --------------------------- '
-	  sleep 2
-	  fonksiyon1
-	fi
-menu
+	case $secim in
+	'1') fvlc;;
+	'2') faudacity;;
+	'3') fspotify;;
+	'4') fobs;;
+	'5') fkdenlive;;
+	'6') fkazam;;
+	'7') fopenshot;;
+	'8') fkodi;;
+	'h1')echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h2') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h3') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h4') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h5') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h6') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h7') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h8') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h9') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h10') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h11') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'h12') echo "Bu fonksiyon yakinda gelecek"
+ 		sleep 3;;
+ 	'g'|'G') echo ;;
+ 	*) echo ' *************************** '
+ 	  echo '     >>> HATALI GIRIS <<<    '
+ 	  echo ' --------------------------- '
+ 	  sleep 2
+ 	  fonksiyon9;;
+ 	esac
+main
 }
 
 fonksiyon10 (){
@@ -1302,29 +1221,24 @@ fonksiyon10 (){
 	echo " 'g': Geri 'h': Yardim        "
 	echo
 	read -p ' Seciminizi girin: ' secim
-	if [ $secim = '1' ]; then
-	  fsteam
-	elif [ $secim = '2' ]; then
-	  fplayonlinux
-	elif [ $secim = '3' ]; then
-	  flutris
-	elif [ $secim = 'h1' ]; then
-	  echo H1
-	elif [ $secim -eq 'h2' ]; then
-	  echo H2
-	elif [ $secim -eq 'h3' ]; then
-	  echo H3
-	elif [ $secim -eq 'g' ]; then
-	  echo
-	else
-	  clear
-	  echo ' *************************** '
+	case $secim in
+	'1') fsteam;;
+	'2') fplayonlinux;;
+	'3') flutris;;
+	'h1')echo "Bu fonksiyon yakinda gelecek"
+		sleep 3;;
+	'h2') echo "Bu fonksiyon yakinda gelecek"
+		sleep 3;;
+	'h3') echo "Bu fonksiyon yakinda gelecek"
+		sleep 3;;
+	'g'|'G') echo ;;
+	*) echo ' *************************** '
 	  echo '     >>> HATALI GIRIS <<<    '
 	  echo ' --------------------------- '
 	  sleep 2
-	  fonksiyon1
-	fi
-menu
+	  fonksiyon1;;
+	esac
+main
 }
 
 #
@@ -1356,7 +1270,7 @@ fonksiyonK1 (){
 	echo "  <Siradaki sayfaya gecmek icin bir tusa basin>   "
 	echo "                                                  "
 	read a
-	if [ $a=* ]; then
+	if [ $a=* ] ;then
 	 clear
 	 fonksiyonK2
 	fi
@@ -1382,7 +1296,7 @@ fonksiyonK2 () {
 	echo " <Siradaki sayfaya gecmek icin bir tusa basin>    "
 	echo
 	read a
-	if [ $a=* ]; then
+	if [ $a=* ] ;then
 	 clear
 	 fonksiyonK3
 	fi
@@ -1408,7 +1322,7 @@ fonksiyonK3 () {
 	echo "paket112='powerlevel10k'                          "
 	echo
 	read a
-	if [ $a=* ]; then
+	if [ $a=* ] ;then
  	 clear
  	 fonksiyonK4
 	fi
@@ -1456,7 +1370,7 @@ fonksiyonK5 () {
 	echo " paket410='google-drive'                   "
 	echo " paket411='dropbox'                        "
 	read a
-	if [ $a=* ]; then
+	if [ $a=* ] ;then
  	 clear
  	 fonksiyonK6
 	fi
@@ -1476,7 +1390,7 @@ fonksiyonK6 () {
 	echo " paket58='photopea'                        "
 	echo " paket59='Krita'                           "
 	read a
-	if [ $a=* ]; then
+	if [ $a=* ] ;then
  	 clear
  	 fonksiyonK7
 	fi
@@ -1508,7 +1422,7 @@ fonksiyonK7 () {
 	echo " paket685='kismet-core'                    "
 	echo " paket686='kismet-plugins'                 "
 	read a
-	if [ $a=* ]; then
+	if [ $a=* ] ;then
  	 clear
  	 fonksiyonK8
 	fi
@@ -1534,7 +1448,7 @@ fonksiyonK8 () {
 	echo " paket84='mysql'                       "
 	echo " paket85='apache2'                     "
 	read a
-	if [ $a=* ]; then
+	if [ $a=* ] ;then
  	 clear
  	 fonksiyonK9
 	fi
@@ -1559,7 +1473,7 @@ fonksiyonK9 () {
 	echo " paket102='playonlinux'                "
 	echo " paket103='lutris'                     "
 	read a
-	if [ $a=* ]; then
+	if [ $a=* ] ;then
  	 clear
  	 main
 	fi
@@ -1572,6 +1486,7 @@ fonksiyonK9 () {
 #
 
 menu (){
+	clear
 	echo
 	echo " Grup 1: Terminal Uygulamalari              "
 	echo " Grup 2: Komunikasyon-Iletisim Uygulamalari "
@@ -1598,54 +1513,28 @@ main (){
 	echo " ****************************************** "
 	echo
 	menu
-	while [[ $no != "Q" && $no != "C" && $no != "c" && $no != "q" ]]; do
 
 	read -p ' Lütfen bir Grup Numarasi giriniz(1-10): ' no
 
 	case $no in
-		'1')
-		fonksiyon1
-		;;
-		'2')
-		fonksiyon2
-		;;
-		'3')
-		fonksiyon3
-		;;
-		'4')
-		fonksiyon4
-		;;
-		'5')
-		fonksiyon5
-		;;
-		'6')
-		fonksiyon6
-		;;
-		'7')
-		fonksiyon7
-		;;
-		'8')
-		fonksiyon8
-		;;
-		'9')
-		fonksiyon9
-		;;
-		'10')
-		fonksiyon10
-		;;
-		'K')
-		fonksiyonK1
-		;;
-		'k')
-		fonksiyonK1
-		;;
+		'1') fonksiyon1;;
+		'2') fonksiyon2;;
+		'3') fonksiyon3;;
+		'4') fonksiyon4;;
+		'5') fonksiyon5;;
+		'6') fonksiyon6;;
+		'7') fonksiyon7;;
+		'8') fonksiyon8;;
+		'9') fonksiyon9;;
+		'10') fonksiyon10;;
+		'K'|'k')fonksiyonK1;;
+		'c'|'C'|'Q'|'q')
+		echo;;
 		*)
 		echo " Hatali Giris Yaptiniz! Lutfen tekrar deneyin"
 		sleep 2
-		menu
-		;;
+		menu;;
 	esac
-	done
 }
 
 #
@@ -1689,8 +1578,7 @@ echo
 echo " *********************************************** "
 echo
 read -p ' Devam etmek icin bir tusa basiniz!' a
-if [ $a=* ]
-then
+if [ $a=* ] ;then
  clear
 fi
 
@@ -1700,7 +1588,7 @@ fi
 ######VVVVVVVVVVVVVVVVVVVVVVVVVVVVV########
 #
 
-if (( $EUID!=0 )); then
+if (( $EUID!=0)); then
 i=5
 	while [ $i -gt 0 ]
 	do
