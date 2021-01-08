@@ -25,7 +25,7 @@ mavi='\033[0;34m'
 cyan='\033[0;36m'
 sari='\033[0;33m'
 normal='\033[0m'
-
+yyanmali='\033[5;32m'
 
 grup1='terminal'
 paket11='Terminator'
@@ -40,6 +40,7 @@ paket19='Git'
 paket110='Neofetch'
 paket111='Screenfetch'
 paket112='LinuxLogo'
+paket113='figlet'
 
 grup2='komunikasyon-iletisim'
 paket21='Discord'
@@ -184,6 +185,12 @@ exit
 fterminator (){
 	fbildiri
 	apt install terminator
+	fyuklendi
+}
+# ::: figlet ::: #
+ffiglet (){
+	fbildiri
+	apt install figlet
 	fyuklendi
 }
 # ::: zsh Terminali ::: #
@@ -780,6 +787,7 @@ fonksiyon1 (){
 	echo "10) neofetch                   "
 	echo "11) screenfetch                "
 	echo "12) linuxlogo                  "
+	echo -e "${yyanmali} 13) figlet *yeni           ${normal} "
 	echo
 	echo " 'g': Geri 'h<sayi>': Aciklama "
 	echo
@@ -798,6 +806,7 @@ fonksiyon1 (){
 	'10') fneofetch;;
 	'11') fscreenfetch;;
 	'12') flinuxlogo;;
+	'13') ffiglet;;
 	'h1')echo "Bu fonksiyon yakinda gelecek"
 		sleep 3;;
 	'h2') echo "Bu fonksiyon yakinda gelecek"
@@ -1567,7 +1576,7 @@ main (){
 		'9') fonksiyon9;;
 		'10') fonksiyon10;;
 		'K'|'k')fonksiyonK1;;
-		'c')
+		'c'|'C'|'q'|'Q')
 		fcikis;;
 		*)
 		echo -e "${yesil} Hatali Giris Yaptiniz! Lutfen tekrar deneyin ${normal}"
